@@ -1,0 +1,100 @@
+---
+project_name: "Swift TODO App with Supabase"
+version: "1.0.0"
+description: "A simple TODO application built with Swift and connected to Supabase backend"
+
+requirements:
+  functional:
+    - id: F1
+      name: "タスク管理"
+      description: "ユーザーはタスクを作成、閲覧、編集、削除できる"
+      details:
+        - "タスク作成: タイトル、説明、期限日の入力が可能"
+        - "タスク一覧表示: すべてのタスクをリスト形式で表示"
+        - "タスク編集: 既存タスクの内容を更新可能"
+        - "タスク削除: 不要になったタスクを削除可能"
+        - "タスク完了状態の切り替え: タスクを完了/未完了に設定可能"
+    
+    - id: F2
+      name: "データ永続化"
+      description: "すべてのタスクデータはSupabaseに保存され、アプリ再起動後も維持される"
+      details:
+        - "Supabaseとの連携設定"
+        - "タスクデータのCRUD操作をSupabaseと同期"
+    
+    - id: F3
+      name: "ユーザー認証"
+      description: "ユーザーはアプリにログインし、個人のタスクのみを表示"
+      details:
+        - "Supabaseを使用したユーザー認証"
+        - "ログイン画面の実装"
+        - "ユーザーごとのタスク管理"
+
+  non_functional:
+    - id: NF1
+      name: "ユーザビリティ"
+      description: "アプリは直感的で使いやすいUIを提供する"
+      details:
+        - "SwiftUIを使用したモダンなインターフェース"
+        - "適切なフィードバックとエラーメッセージの表示"
+    
+    - id: NF2
+      name: "オフライン対応"
+      description: "インターネット接続がない場合でも基本機能が使用可能"
+      details:
+        - "ローカルデータの一時保存"
+        - "オンライン復帰時のデータ同期"
+
+architecture:
+  frontend: 
+    - "SwiftUI: モダンなUI構築"
+    - "Swift Package Manager: 依存関係管理"
+    - "MVVM (Model-View-ViewModel)パターン: コード構造化"
+  
+  backend:
+    - "Supabase: データ管理とユーザー認証"
+    - "PostgreSQL: データベース (Supabaseが提供)"
+
+development_phases:
+  - phase: "環境構築"
+    tasks:
+      - "Xcodeプロジェクト設定"
+      - "必要なライブラリの導入"
+      - "Supabase接続設定"
+  
+  - phase: "基本機能実装"
+    tasks:
+      - "モデル定義"
+      - "タスク一覧表示画面"
+      - "タスク作成・編集画面"
+      - "タスク削除機能"
+  
+  - phase: "認証機能実装"
+    tasks:
+      - "ログイン画面"
+      - "ユーザー登録画面"
+      - "認証状態管理"
+  
+  - phase: "データ同期実装"
+    tasks:
+      - "Supabaseとのデータ同期"
+      - "オフライン対応機能"
+  
+  - phase: "UIの改善"
+    tasks:
+      - "デザイン調整"
+      - "アニメーション追加"
+      - "ユーザビリティ向上"
+
+milestones:
+  - name: "基本機能の完成"
+    description: "タスクのCRUD操作が可能なアプリの完成"
+    phase: "基本機能実装"
+  
+  - name: "認証機能の完成"
+    description: "ユーザー認証機能を含むアプリの完成"
+    phase: "認証機能実装"
+  
+  - name: "完全版リリース"
+    description: "すべての要件を満たしたアプリの完成"
+    phase: "UIの改善"
